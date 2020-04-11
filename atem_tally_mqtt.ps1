@@ -30,12 +30,12 @@ Else {$MqttClient.Publish("cam1/cmd", [System.Text.Encoding]::UTF8.GetBytes("neo
 #ZOOM Tally Check
 If ($($me1.Program) -eq 9) {$MqttClient.Publish("zoom/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,255,0,0,0"), 0, 0)}
 ElseIf ($($me1.Preview) -eq 9) {$MqttClient.Publish("zoom/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,255,0,0"), 0, 0)}
-Else {$MqttClient.Publish("cam1/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,0,0,0"), 0, 0)}
+Else {$MqttClient.Publish("zoom/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,0,0,0"), 0, 0)}
 
 #CWID Tally Check
 If ($($me1.Program) -eq 6) {$MqttClient.Publish("cwid/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,255,0,0,0"), 0, 0)}
 ElseIf ($($me1.Preview) -eq 6) {$MqttClient.Publish("cwid/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,255,0,0"), 0, 0)}
-Else {$MqttClient.Publish("cam1/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,0,0,0"), 0, 0)}
+Else {$MqttClient.Publish("cwid/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,0,0,0,0"), 0, 0)}
 
 #LEF2 Tally Check
 If ($($me1.Program) -eq 6) {$MqttClient.Publish("lef2/cmd", [System.Text.Encoding]::UTF8.GetBytes("neopixelall,255,0,0,0"), 0, 0)}
